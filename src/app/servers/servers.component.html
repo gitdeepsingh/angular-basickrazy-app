@@ -10,7 +10,6 @@
 <!--<p>{{ serverCreationStatus }}</p>-->
 <p *ngIf="isServer; else noServer">Server was created, name is {{serverName}}</p>
 <ng-template #noServer>
-  <p>No server was created. Enter a name and clcik to create one.</p>
+  <p>No server was created. Click to create one.</p>
 </ng-template>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers; let i = index"></app-server>
