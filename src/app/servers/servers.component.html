@@ -7,6 +7,10 @@
   Select Server
 </button>
 <!--<p [innerText]="allowNewServer"></p>-->
-<p>{{ serverCreationStatus }}</p>
+<!--<p>{{ serverCreationStatus }}</p>-->
+<p *ngIf="isServer; else noServer">Server was created, name is {{serverName}}</p>
+<ng-template #noServer>
+  <p>No server was created. Enter a name and clcik to create one.</p>
+</ng-template>
 <app-server></app-server>
 <app-server></app-server>
